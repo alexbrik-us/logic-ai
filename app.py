@@ -55,7 +55,7 @@ def run_clingo(asp_code):
         # Convert the model (list of atoms) to a string representation
         models.append(str(m))
 
-    ctl = clingo.Control()
+    ctl = clingo.Control(["0"])
     
     try:
         ctl.add("base", [], asp_code)
@@ -104,6 +104,9 @@ st.markdown("This app uses **Gemini** to write logic rules and **Clingo** to sol
 # Input
 query = st.text_area("Describe your logic puzzle:", height=150,
     placeholder="e.g., In a box I have a blue dinosaur, a red pen and a green ball. The dinosaur is not next to the pen. What is in the middle?")
+# Another example:
+# 4 people are sitting at a round table: Alex, Becca, Clancy and David. Alex is sitting across from Clancy.
+# David is sitting to the right of Alex. Who is sitting to the left of Clancy?
 
 if st.button("Solve Logic"):
     if not query:

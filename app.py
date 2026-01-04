@@ -103,7 +103,7 @@ st.markdown("This app uses **Gemini** to write logic rules and **Clingo** to sol
 
 # Input
 query = st.text_area("Describe your logic puzzle:", height=150,
-    placeholder="e.g., John is older than Sue. Sue is younger than Bob. Who is the oldest?")
+    placeholder="e.g., In a box I have a blue dinosaur, a red pen and a green ball. The dinosaur is not next to the pen. What is in the middle?")
 
 if st.button("Solve Logic"):
     if not query:
